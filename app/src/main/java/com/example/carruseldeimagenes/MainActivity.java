@@ -102,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < cantidadPlatos.length; i++){
             cantidadPlatos[i] = 0;
         }
+
+        contador = 0;
+        img.setImageResource(imgs[contador]);
+        precio.setText("Bs. " + precios[contador]);
+        nombrePlato.setText(nombre[contador]);
+
+
         verificar();
     }
 
