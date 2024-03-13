@@ -35,10 +35,13 @@ public class ResumenActivity extends AppCompatActivity {
         for(int i = 0; i < cantidadPlatos.length; i++){
             if(cantidadPlatos[i] > 0){
                 int precioTotal = cantidadPlatos[i] * precios[i];
-                adapter.add(nombre[i] + "\t\t\t" + cantidadPlatos[i]  + "\t\t\t\t\t\t\t\tBs. " + precios[i] + "\t\t\t\t\tBs. " + precioTotal);
+                adapter.add(nombre[i] + "\t\t\t" + cantidadPlatos[i]  + "\t\t\tBs. " + precios[i] + "\t\t\tBs. " + precioTotal);
             }
         }
         lista.setAdapter(adapter);
+
+        //finalizar la actividad principal
+
 
 
     }
