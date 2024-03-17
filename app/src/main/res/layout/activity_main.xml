@@ -96,11 +96,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="verSiguiente"
-        android:text="Finalizar" />
+        android:text="Ver Resumen" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
@@ -108,15 +108,23 @@
             android:layout_width="193dp"
             android:layout_height="wrap_content"
             android:onClick="reiniciar"
-            android:text="Reiniciar" />
+            android:text="Finalizar Compra" />
 
         <Button
-            android:id="@+id/btnSalir"
+            android:id="@+id/btnHistorial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="salir"
-            android:text="Salir" />
+            android:onClick="historial"
+            android:text="Historial" />
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="salir"
+        android:text="Salir" />
 
     <!-- Mostrar las imagenes de los platos desde el drwabale  en un carrusel de imagenes -->
 

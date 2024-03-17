@@ -12,10 +12,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private int contador = 0;
+    private int contadorHistorico = 0;
     private int imgs[] = {R.drawable.p01, R.drawable.p02, R.drawable.p03, R.drawable.p04, R.drawable.p05, R.drawable.p06, R.drawable.p07, R.drawable.p08, R.drawable.p09, R.drawable.p10, R.drawable.p11, R.drawable.p12, R.drawable.p13, R.drawable.p14, R.drawable.p15, R.drawable.p16, R.drawable.p17, R.drawable.p18, R.drawable.p19, R.drawable.p20, R.drawable.p21, R.drawable.p22, R.drawable.p23, R.drawable.p24, R.drawable.p25, R.drawable.p26};
     private int precios[] = {17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42};
     private String[] nombre = {"Charque", "Papas a la huancaina", "Majadito", "Pique Macho", "Hamburguesa", "Silpancho", "Plato paceño", "Sajta", "Milanesa de pollo", "Ramen", "Pollo al horno", "Salchipapa", "Pulpo", "Chicharron", "Sopita de fideo", "Chicharron","Ispi", "Chairo", "Filete", "Aji de fideo", "Sushi", "Camarones", "Aji de racacha", "Asado", "Porcion de trucha dorada", "Silpancho"};
     private int[] cantidadPlatos = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    private int[][] preciosHistoricos = new int[100][25];
+    private String[][] nombreHistoricos = new String[100][25];
+    private int[][] cantidadPlatosHistoricos = new int[100][25];
 
     private ImageView img;
     private TextView precio;
@@ -103,6 +108,12 @@ public class MainActivity extends AppCompatActivity {
             cantidadPlatos[i] = 0;
         }
 
+        preciosHistoricos[contadorHistorico] = precios;
+        nombreHistoricos[contadorHistorico] = nombre;
+        cantidadPlatosHistoricos[contadorHistorico] = cantidadPlatos;
+        contadorHistorico++;
+
+
         contador = 0;
         img.setImageResource(imgs[contador]);
         precio.setText("Bs. " + precios[contador]);
@@ -110,6 +121,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         verificar();
+    }
+
+    public void historial(View v){
+        Intent intent = new Intent(this, HistoricoActivity.class);
+        intent.putExtra("preciosHistoricos", preciosHistoricos);
+        intent.putExtra("nombreHistoricos", nombreHistoricos);
+        intent.putExtra("cantidadPlatosHistoricos", cantidadPlatosHistoricos);
+        startActivity(intent);
     }
 
     public void salir(View v){

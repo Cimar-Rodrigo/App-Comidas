@@ -7,7 +7,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class ResumenActivity extends AppCompatActivity {
     private ListView lista;
@@ -22,7 +21,7 @@ public class ResumenActivity extends AppCompatActivity {
     }
 
     public void initComponents() {
-        lista =  findViewById(R.id.lista);
+        lista =  findViewById(R.id.listaH);
     }
 
 

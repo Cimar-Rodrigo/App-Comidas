@@ -27,6 +27,13 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".HistoricoActivity"
+            android:exported="true">
+        </activity>
+
+
+
     </application>
 
 </manifest>
